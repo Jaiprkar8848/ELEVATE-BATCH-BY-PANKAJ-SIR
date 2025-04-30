@@ -1,0 +1,25 @@
+/*
+   1
+  2 2
+ 3 3 3
+4 4 4 4
+
+*/
+
+#include<stdio.h>
+void main(){
+    int n,row,col,spaces;
+    printf("Enter the number of rows : ");
+    scanf("%d",&n);
+
+    for(row=1;row<=n;row++){
+        spaces=n-row;
+        for(int j=1;j<=spaces;j++)
+            printf(" ");
+        
+        for(col=1;col<=row;col++)
+            printf("%d ",row);
+
+        printf("\n");
+    }
+}

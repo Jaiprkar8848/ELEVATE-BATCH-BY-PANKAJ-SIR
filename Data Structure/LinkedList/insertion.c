@@ -26,6 +26,32 @@ void insertAtBegin(Node **start,int key){
     }
 }
 
+void insertAtEnd(Node *start,int key){
+    Node* newnode=malloc(sizeof(Node));
+    if(newnode!=NULL){
+        Node *ptr=start;
+        newnode->data=key;
+        newnode->next=NULL;
+        if(ptr==NULL){
+            start=newnode;
+            return;
+        }
+        while(ptr->next!=NULL)
+            ptr=ptr->next;
+        ptr->next=newnode;
+    }
+}
+
+// p not points to last node
+void insertAfterNode(Node* start,Node *p,int key){
+    Node* newnode=malloc(sizeof(newnode));
+    if(newnode!=NULL){
+        newnode->data=key;
+        newnode->next=p->next;
+        p->next=newnode;
+    }
+}
+
 void traversal(Node *start){
     Node *ptr=start;
     while(ptr!=NULL){
@@ -41,5 +67,11 @@ void main(){
     start->next=NULL;
     traversal(start);
     insertAtBegin(&start,32);
+    // start=insertAtBegin(start,32)
+    traversal(start);
+    insertAtEnd(start,54);
+    traversal(start);
+    Node *p=start->next;
+    insertAfterNode(start,p,12);
     traversal(start);
 }

@@ -1,16 +1,20 @@
 #include<stdio.h>
-
-int reverse(int n){
-    int reversed=0;
-    while(n!=0){
-        reversed=reversed*10+n%10;
-        n/=10;
-    }
-    return reversed;
-}
-
 void main(){
-    int n=12345;
-    n=reverse(n);
-    printf("%d",n);
+    int n=5;
+    int i,j,spaces;
+    char ch='A';
+    for(i=1;i<=n;i++){
+        for(spaces=1;spaces<=n-i;spaces++)
+            printf(" ");
+        for(j=1;j<=2*i-1;j++)
+            printf("*");
+        printf("\n");
+    }
+    for(i=1;i<=n-1;i++){
+        for(spaces=1;spaces<=i;spaces++)
+            printf(" ");
+        for(j=1;j<=2*(n-i)-1;j++)
+            printf("*");
+        printf("\n");
+    }
 }

@@ -1,1 +1,2 @@
 character to integer -> ch-'0'
+if n is large then go with unsigned
